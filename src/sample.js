@@ -10,7 +10,18 @@ const isDivisibleBy5 = (num1) => {
     }
 }
 
+const isODDEven = (num2) => {
+    if(num2 % 2 == 0){
+        return "Even";
+    }
+    else
+    {
+        return "Odd";x
+    }
+}
+//
 module.exports = {
     addFunc,
-    isDivisibleBy5
+    isDivisibleBy5,
+    isODDEven
 }

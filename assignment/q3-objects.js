@@ -25,16 +25,34 @@ function convert(keyArr, valueArr){
         - Step 3: Within the for-loop, add the key and value to the local scoped object.
         - Step 4: Write a return statement to return the object literal after the for-loop code block.
     */
-}
-
+        if (keyArr.length !== valueArr.length) {
+            throw new Error('Arrays must have the same length');
+        }
+    
+        // Iterate through the ids array
+        for (let i = 0; i < keyArr.length; i++) {
+            booksObj[keyArr[i]] = valueArr[i];
+            printByKey(keyArr[i]);
+            
+        }
+        
+        return booksObj;
+            
+        }
+   
 function printByKey(key){
-    console.log(booksObj[key]);
+    console.log("Book Name for Id : "+ key +" is " + booksObj[key]);
 }
 
 booksObj = convert(bookIdArr, bookTitle);
+for(i=0;i<=booksObj.length;i++)
+{
+    printByKey(bookIdArr[i]);
+}
 printByKey("NLB2"); // prints "Progamming for Dummies"
 
 // Ignore the code below this line
 module.exports = {
-    convert
+    convert,
+    printByKey
 }

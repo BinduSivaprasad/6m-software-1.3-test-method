@@ -4,6 +4,7 @@
 const {studentList, printStudentNames} = require("./q2-arrays-loop");
 const {convert} = require("./q3-objects");
 
+
 //The describe () creates a block that groups together several related tests
 describe("Demo", ()=>{
     //it() describes a single test
@@ -17,13 +18,14 @@ describe("Demo", ()=>{
     })
 
     it("should test the convert function of q3", ()=>{
-        const keyArr = ["NLB1", "NLB2"];
-        const valueArr = ["Book A", "Book B"];
+        const keyArr = ["NLB1", "NLB2","NLB3", "NLB4"];
+        const valueArr = ["Lord of the Rings", "Programming for Dummies","Introduction to Software Testing","How to be a Software Developer"];
 
         const result = convert(keyArr, valueArr);
+    
         //the toBe() can be used to match specific values
-        expect(result["NLB1"]).toBe("Book A");
-        expect(result["NLB2"]).toBe("Book B");
+        expect(result["NLB3"]).toBe("Introduction to Software Testing");
+        expect(result["NLB2"]).toBe("Programming for Dummies");
     })
 })
 //So when the command `npm run test` is run, it calls the test suite and runs the individual tests.
